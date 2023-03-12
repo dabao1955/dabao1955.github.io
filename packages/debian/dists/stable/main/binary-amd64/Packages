@@ -1,0 +1,50 @@
+Package: fantascene-dynamic-wallpaper
+Version: 1.4.2
+Architecture: amd64
+Maintainer: liuminghang <liuminghang0821@gmail.com>
+Installed-Size: 6971
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), libglib2.0-0 (>= 2.35.8), libmpv1 (>= 0.29), libqt5core5a (>= 5.15.1), libqt5dbus5 (>= 5.14.1), libqt5gui5 (>= 5.10.0) | libqt5gui5-gles (>= 5.10.0), libqt5webenginewidgets5 (>= 5.14.1), libqt5widgets5 (>= 5.11.0~rc1), libqt5x11extras5 (>= 5.6.0), libstdc++6 (>= 11), libx11-6, libxcb-ewmh2 (>= 0.4.1), libxcb1, qdbus-qt5
+Recommends: libqt5libqgtk2, kimageformat-plugins
+Homepage: http://github.com/dependon
+Priority: optional
+Section: utils
+Filename: pool/main/f/fantascene-dynamic-wallpaper/fantascene-dynamic-wallpaper_1.4.2_amd64.deb
+Size: 6594088
+SHA256: 7916a2ef0290b3cf1445d04cd8da471787a9a549a59793fe882299863c4d6cd9
+SHA1: 868586d5853a11cd3460ab47bc16fdd4e4317eb3
+MD5sum: 467c091353d57d86b7e01269344e8ce0
+Description: video wallpaper for fantascene.
+
+Package: simple-image-filter
+Version: 1.1.0
+Architecture: amd64
+Maintainer: liuminghang  <liuminghang0821@gmail.com>
+Installed-Size: 662
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), libgomp1 (>= 4.9), libqt5core5a (>= 5.15.1), libqt5gui5 (>= 5.3.0) | libqt5gui5-gles (>= 5.3.0), libqt5widgets5 (>= 5.15.1), libstdc++6 (>= 4.3)
+Recommends: libqt5libqgtk2, kimageformat-plugins
+Homepage: simple-image-filter
+Priority: optional
+Section: utils
+Filename: pool/main/s/simple-image-filter/simple-image-filter_1.1.0_amd64.deb
+Size: 284278
+SHA256: 18aa06c1040c6a73c29746fc67a7ef1573f92b978f453ebc7801387bd6050bb7
+SHA1: a6a551ce5622b7210a789fb268fd12f991f83e8a
+MD5sum: 2619fb6c6b5aae25768a538fcdf37b6d
+Description: simple image filter.
+
+Package: tmoe-linux-tool
+Version: 1.4989.50
+Architecture: all
+Essential: no
+Installed-Size: 86000
+Maintainer: https://github.com/2moe/tmoe
+Priority: optional
+Section: custom）
+Filename: pool/main/t/tmoe-linux-tool/tmoe-linux-tool_1.4989.50_all.deb
+Size: 676556
+SHA256: 730f65b60d3d5215fd09473155260ada02fb28099f0e51128f5112f4fb29f49f
+SHA1: 7fa31581c13299ace26dcfc25cbd30c736e985be
+MD5sum: 60b606153ccebab1043a29d4c88ea167
+Description: TMOE, More Optional Environments
+Pre-Depends: aria2 (>= 1.30.0), binutils (>= 2.28-5), coreutils (>= 8.26-3), curl (>= 7.52.1-5), findutils (>= 4.6.0), git (>= 1:2.11.0-3), grep, lsof (>= 4.89), micro (>= 2.0.6-2) | nano (>= 2.7.4-1), proot (>= 5.1.0), procps (>= 2:3.3.12), sed, sudo (>= 1.8.19p1-2.1), tar (>= 1.29b-1.1),  util-linux (>= 2.29.2-1), whiptail (>= 0.52.19), xz-utils (>= 5.2.2), zstd (>= 1.1.2)
+

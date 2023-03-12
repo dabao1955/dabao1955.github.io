@@ -1,0 +1,65 @@
+Package: fantascene-dynamic-wallpaper
+Version: 1.4.2
+Architecture: arm64
+Maintainer: liuminghang <liuminghang0821@gmail.com>
+Installed-Size: 6947
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), libglib2.0-0 (>= 2.35.8), libmpv1 (>= 0.29), libqt5core5a (>= 5.15.1), libqt5dbus5 (>= 5.14.1), libqt5gui5 (>= 5.10.0) | libqt5gui5-gles (>= 5.10.0), libqt5webenginewidgets5 (>= 5.14.1), libqt5widgets5 (>= 5.11.0~rc1), libqt5x11extras5 (>= 5.6.0), libstdc++6 (>= 11), libx11-6, libxcb-ewmh2 (>= 0.4.1), libxcb1, qdbus-qt5
+Recommends: libqt5libqgtk2, kimageformat-plugins
+Homepage: http://github.com/dependon
+Priority: optional
+Section: utils
+Filename: pool/main/f/fantascene-dynamic-wallpaper/fantascene-dynamic-wallpaper_1.4.2_arm64.deb
+Size: 6586324
+SHA256: 9aa82aa588baafe7bf78fed8c2525974057f89a3323573b4e8f141663900203c
+SHA1: 16f6ceec03dcbcf78db9a8e3d208b5d34d23c985
+MD5sum: a3aa244ffb0ce612c2816f360a82d635
+Description: video wallpaper for fantascene.
+
+Package: simple-image-filter
+Version: 1.1.0
+Architecture: arm64
+Maintainer: liuminghang  <liuminghang0821@gmail.com>
+Installed-Size: 654
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), libgomp1 (>= 4.9), libqt5core5a (>= 5.6.0~beta), libqt5gui5 (>= 5.3.0) | libqt5gui5-gles (>= 5.3.0), libqt5widgets5 (>= 5.15.1), libstdc++6 (>= 4.3)
+Recommends: libqt5libqgtk2, kimageformat-plugins
+Homepage: simple-image-filter
+Priority: optional
+Section: utils
+Filename: pool/main/s/simple-image-filter/simple-image-filter_1.1.0_arm64.deb
+Size: 281024
+SHA256: f85d96d9cce9a0053ce99e326879d937937c4781205082a56aafff940cde95d8
+SHA1: 8704dc7500d54cc3ff5f913ccdff04150bacd2ee
+MD5sum: 040e02be79f0e869f9f87a12a9b1964a
+Description: simple image filter.
+
+Package: test2
+Version: 1.0
+Architecture: arm64
+Essential: no
+Installed-Size: 1024
+Maintainer: test2.org
+Priority: optional
+Section: custom
+Filename: pool/main/t/test2/test2_1.0_arm64.deb
+Size: 4210
+SHA256: fcd7b88fcd9790f24e6650483f9a3cf19674f745e56415cbd4818679f9f0f948
+SHA1: d21516f15d3250f29a84558be5bd081abd6e2597
+MD5sum: 2531005ff0ce47de7284748fb3f30c27
+Description: 打印一些名言 
+
+Package: tmoe-linux-tool
+Version: 1.4989.50
+Architecture: all
+Essential: no
+Installed-Size: 86000
+Maintainer: https://github.com/2moe/tmoe
+Priority: optional
+Section: custom）
+Filename: pool/main/t/tmoe-linux-tool/tmoe-linux-tool_1.4989.50_all.deb
+Size: 676556
+SHA256: 730f65b60d3d5215fd09473155260ada02fb28099f0e51128f5112f4fb29f49f
+SHA1: 7fa31581c13299ace26dcfc25cbd30c736e985be
+MD5sum: 60b606153ccebab1043a29d4c88ea167
+Description: TMOE, More Optional Environments
+Pre-Depends: aria2 (>= 1.30.0), binutils (>= 2.28-5), coreutils (>= 8.26-3), curl (>= 7.52.1-5), findutils (>= 4.6.0), git (>= 1:2.11.0-3), grep, lsof (>= 4.89), micro (>= 2.0.6-2) | nano (>= 2.7.4-1), proot (>= 5.1.0), procps (>= 2:3.3.12), sed, sudo (>= 1.8.19p1-2.1), tar (>= 1.29b-1.1),  util-linux (>= 2.29.2-1), whiptail (>= 0.52.19), xz-utils (>= 5.2.2), zstd (>= 1.1.2)
+
