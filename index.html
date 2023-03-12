@@ -52,7 +52,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-03-12 05:07:31'
+  postUpdate: '2023-03-12 17:25:33'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -160,15 +160,20 @@
 准备工作参考这篇 
 https://dabao1955.github.io/2023/03/09/%E9%80%9A%E8%BF%87reprepro%E5%88%9B%E5%BB%BA%E7%A7%81%E6%9C%89debian%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93/
 安装dpkg-dev用于搭建本地软件源
-`&#96;&#96;bash
-sudo apt install dpkg-dev gzip -y
-`&#96;&#96;
-扫描软件包`&#96;&#96;bash
-12$ mkdir deb # 这里的文件夹可以填别的名字$ dpkg-scanpackages  -m . /dev/null | gzip -9c &gt; Packages.gz #将deb文件放入deb文件夹中再执行此操作
+123$ sudo apt install dpkg-dev gzip -y
 
-`&#96;&#96;
+扫描软件包12$ mkdir deb # 这里的文件夹可以填别的名字$ dpkg-scanpackages  -m . /dev/null | gzip -9c &gt; Packages.gz #将deb文件放入deb文件夹中再执行此操作
+
+
 然后在&#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;1.list中写入
-`&#96;&#96;&#x2F;etc&#x2F;apt&#x2F;sdources.list.d&# ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/09/%E9%80%9A%E8%BF%87reprepro%E5%88%9B%E5%BB%BA%E7%A7%81%E6%9C%89debian%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93/" title="通过reprepro和github page创建私有debian软件仓库">通过reprepro和github page创建私有debian软件仓库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-09T09:57:19.000Z" title="Created 2023-03-09 09:57:19">2023-03-09</time></span></div><div class="content">效果图
+123deb [trusted=-yes] https://xxx.github.io ./ #这里的xxx换成你自己的仓库名
+
+最后执行
+1$ sudo apt update
+
+
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/09/%E9%80%9A%E8%BF%87reprepro%E5%88%9B%E5%BB%BA%E7%A7%81%E6%9C%89debian%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93/" title="通过reprepro和github page创建私有debian软件仓库">通过reprepro和github page创建私有debian软件仓库</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-03-09T09:57:19.000Z" title="Created 2023-03-09 09:57:19">2023-03-09</time></span></div><div class="content">效果图
 准备工作:一台装有debian或ubuntu的电脑一双灵巧的手
 安装repreproreprepro是一个包仓库管理工具，你可以很容易地安装它。
 1$ sudo apt install reprepro -y
@@ -197,7 +202,7 @@ More info: Deployment
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/web%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">web前端</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/debian/" style="font-size: 1.5em; color: #99a9bf">debian</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/github-page/" style="font-size: 1.1em; color: #999">github page</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">March 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">876</div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-12T05:07:31.512Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By dabao1955</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/github-page/" style="font-size: 1.1em; color: #999">github page</a> <a href="/tags/debian/" style="font-size: 1.5em; color: #99a9bf">debian</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">March 2023</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">845</div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-12T17:25:33.100Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By dabao1955</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({
       strings: str,
