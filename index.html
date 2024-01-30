@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<style>
+		body {
+			color: black;
+			margin: 0px;
+		}
+		.div-bg {
+			position: absolute;
+			z-index: -1;
+			height: 100vh;
+			width: 100vw;
+			/* background-size: 100% 100%; */
+			background-size: cover;
+			background-position: center center;
+		}
+		.div-outer {
+			position: absolute;
+			z-index: 10;
+			display: flex;
+			height: 100vh;
+			align-items: center;
+			margin-left: calc(50vw - 200px);
+		}
+		.div-inner {
+			height: 600px;
+			width: 400px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 10px;
+			text-align: center;
+		}
+		.icon {
+			height: 120px;
+			width: 120px;
+			border-radius: 50%;
+		}
+		img {
+			height: 50px;
+			width: 50px;
+		}
+		button {
+			height: 80px;
+			width: 100px;
+			border-radius: 10%;
+			border-width: 0px;
+			background-color: transparent;
+			transition-duration: 0.5s;
+		}
+		button:hover {
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+		.text {
+			color: grey;
+			font-size: 20px;
+		}
+		.text::after {
+			content: "";
+			height: 25px;
+			width: 2px;
+			background-color: darkgrey;
+			position: absolute;
+			animation: blink 1s step-end infinite;
+		}
+		@keyframes blink {
+			0%, 100% {
+				background-color: darkgrey;
+			}
+			50% {
+				background-color: transparent;
+			}
+		}
+		.gray {
+			filter: grayscale(.8);
+		}
+		canvas {
+			position: absolute;
+			z-index: 1;
+		}
+	</style>
+<meta name="keywords" content="个人主页, 博客, 计算机, 编程, Galgame, Minecraft, Homepage, Blog, Programming">
+<meta name="description" content="dabao1955 的个人站点">
+<title>MainPage</title>
+</head>
+<body> 
+<div class="div-bg" id="bg"></div>
+<div class="div-outer">
+<div class="div-inner">
+<br><br>
+<img src="https://pic.koishi514.moe/down/caf66072bbb3eadbd39280fe08578203cc7d8f6a526ba9a83580e2a2" class="icon" alt>
+<h1>無意義の櫻</h1>
+<br>
+<button title="我的博客"><a href="/blog/index.html"><img src="https://pic.koishi514.moe/png/e658c6a5f80e6b5c5f6efe6db005efadeb3161cfac3a8b291d2941ee" alt></a></button>
+<button title="我的github"><a href="https://github.com/dabao1955"><img src="https://pic.koishi514.moe/png/cb03aec369916dc3026170c9593f9ca4ced5dd06dcfd85db9d2fb516" alt></a></button>
+<button title="我的telegrem"><a href="https://t.me/dabao1955"><img src="https://pic.koishi514.moe/png/1931dcabc3a74feed4aa5ebba7e4fc5bfd6d886160688b5a49460629" alt></a></button>
+<br><br>
+<p>本站自 <span id="tm">2024-01-31</span> 以来已运行 <span id="diff"></span> 天</p>
+<p>今日访问量：<span id="line">0</span></p>
+<br><br>
+<span class="text" id="txt" lang="ja-Jpan-JP"></span>
+</div>
+</div>
+<canvas id="snow"></canvas>
+<script>
+		var dt = new Date();
+		// document.getElementById("diff").innerHTML = Math.floor(Date.now() / 86400000);
+		document.getElementById("diff").innerHTML = Math.floor(dt.getTime() / 86400000);
+		var bg = [
+			["https://dev.iw233.cn/api/img/ec43126fgy1h176jwwg1xj20zk0k0qab.jpg", "君の日々をほんの少しだけでもいい\n手に入れたくて"]
+		];
+		var sl = bg[Math.floor(Math.random() * bg.length)], cur = 0, dom = document.getElementById("txt");
+		document.getElementById("bg").style.backgroundImage = `url(${sl[0]})`;
+		Object.prototype.constructor.forEach = (obj, callback) => {
+			if (typeof callback === "function")
+				for (let key in obj) callback(obj[key], key, obj);
+			else throw new TypeError(`${callback} is not a function.`);
+		};
+		fetch("/stat.php").then(resp => resp.json()).then(dat => {
+			Object.forEach(dat, (ele, sub) => {
+				document.getElementById(sub).innerHTML = ele;
+			});
+		});
+		var t = setInterval(() => {
+			var c = sl[1][cur++];
+			if (cur >= sl[1].length) clearInterval(t);
+			if (c == "\n") dom.innerHTML += "<br>";
+			else dom.innerHTML += c;
+		}, 150);
+		if (dt.getMonth() == 11 && dt.getDate() == 25) {
+			var cvs = document.getElementById("snow"), ctx = cvs.getContext("2d"), pos = new Array(250).fill([-1, -1, -1, false]);
+			cvs.height = window.innerHeight;
+			cvs.width = window.innerWidth;
+			ctx.fillStyle = "white";
+			ctx.shadowBlur = 10;
+			ctx.shadowColor = "white";
+			setInterval(() => {
+				ctx.clearRect(0, 0, cvs.width, cvs.height);
+				ctx.beginPath();
+				for (var c = 0; c < pos.length; c++) {
+					if (pos[c][0] > cvs.width || pos[c][0] < 0 || pos[c][1] > cvs.height || pos[c][1] < 0) {
+						pos[c] = [
+							Math.random() * cvs.width,
+							Math.random() * cvs.height * (pos[c][3] ? 1 / 16 : 1),
+							Math.random() * 5,
+							true
+						];
+					}
+					var p = pos[c];
+					p[0] += (4 - pos[c][2]) / 10;
+					p[1] += (8 - pos[c][2]) / 10;
+					ctx.moveTo(p[0], p[1]);
+					ctx.arc(p[0], p[1], p[2], 0, Math.PI * 2);
+				}
+				ctx.fill()
+			}, 4);
+		}
+	</script>
+</body>
+</html>
