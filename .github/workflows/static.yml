@@ -31,12 +31,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: pnpm/action-setup@main
       - name: Setup Pages
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
       - name: Install dependices
-        run: yarn install
+        run: pnpm i
       - name: Build Blog
         run: hexo g
       - name: Deploy to GitHub Pages
